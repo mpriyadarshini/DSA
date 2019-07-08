@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Seven {
+public class Substrings {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String str = s.next();

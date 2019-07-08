@@ -1,7 +1,7 @@
 
 import java.util.*;
 
-public class Five {
+public class SumOfSmallest {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
@@ -9,24 +9,23 @@ public class Five {
         for (int i = 0; i < n; i++) {
             arr[i] = s.nextInt();
         }
-        int sum = property(arr);
+        int sum = sumOfSmallestTwoNumbers(arr);
         System.out.println(sum);
     }
 
-    public static int property(int a[]) {
+    public static int sumOfSmallestTwoNumbers(int a[]) {
         int small = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
-        for(int i=0;i<a.length;i++){
-            if(a[i]<small){
-                
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] < small) {
+
                 second = small;
                 small = a[i];
-            }
-            else if(a[i]<second &&  a[i]!=small){
+            } else if (a[i] < second && a[i] != small) {
                 second = a[i];
 
             }
         }
-        return small+second;
+        return small + second;
     }
 }

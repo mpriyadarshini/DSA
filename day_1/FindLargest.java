@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Four {
+public class FindLargest {
 
     public static int largest(int arr[]) {
         int large = 0;

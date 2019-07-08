@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Three {
+public class ArrayIsSorted {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
@@ -8,20 +8,19 @@ public class Three {
         for (int i = 0; i < n; i++) {
             a[i] = s.nextInt();
         }
-        boolean b = isSorted(a);
-        System.out.println(b);
+        boolean sorted = isSorted(a);
+        System.out.println(sorted);
 
     }
 
     public static boolean isSorted(int arr[]) {
-        if(arr == null) {
-            
+        if (arr == null) {
+
             return false;
-        }
-        else if(arr.length == 0) {
+        } else if (arr.length == 0) {
             return true;
         }
-        for (int i = 0; i < arr.length-1; i++) {
+        for (int i = 0; i < arr.length - 1; i++) {
             if (arr[i] > arr[i + 1]) {
                 return false;
             }
