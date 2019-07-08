@@ -17,7 +17,10 @@ public class SumOfSmallest {
         int small = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
         for (int i = 0; i < a.length; i++) {
-            if (a[i] < small) {
+            if (a[i] == small) {
+                second = small;
+                small = a[i];
+            } else if (a[i] < small) {
 
                 second = small;
                 small = a[i];
