@@ -6,15 +6,20 @@ public class Two {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         int a[] = new int[n];
-        int count = 0;
+        int target = 42;
         for (int i = 0; i < a.length; i++) {
             a[i] = s.nextInt();
         }
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == 42) {
+        int result = check(a,target);
+        System.out.println(result);
+    }
+    public static int check(int arr[],int number){
+        int count=0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
                 count++;
             }
         }
-        System.out.println(count);
+        return count;
     }
 }

@@ -8,12 +8,12 @@ public class Three {
         for (int i = 0; i < n; i++) {
             a[i] = s.nextInt();
         }
-        boolean b = sort(a);
+        boolean b = isSorted(a);
         System.out.println(b);
 
     }
 
-    public static boolean sort(int arr[]) {
+    public static boolean isSorted(int arr[]) {
         if(arr == null) {
             
             return false;
