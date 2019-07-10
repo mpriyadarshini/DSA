@@ -9,22 +9,29 @@ public class Nine {
             a[i] = s.nextInt();
         }
         int target = s.nextInt();
-        triplets(a, n, target);
+        triplets(a, target);
     }
 
-    public static void triplets(int arr[], int n, int target) {
-        for (int i = 0; i < n - 1; i++) {
-            HashSet<Integer> s = new HashSet<>();
-            for (int j = i + 1; j < n; j++) {
-                int x = target- (arr[i] + arr[j]);
-                if (s.contains(x)) {
-                    System.out.printf("%d %d %d\n", x, arr[i], arr[j]);
+    public static void triplets(int a[], int target) {
+        int n = a.length - 1;
+        Arrays.sort(a);
+        
+        for(int i=0;i<n;i++){
+            for(int j=0;j<n;j++){
+                if(i==j){
+                    continue;
                 }
-                else{
-                    s.add(arr[j]);
+                for(int k=0;k<n;k++){
+                    if(k==j&&k==i){
+                        continue;
+                    }
+                    else if((a[i]+a[j]+a[k])==target){
+                        System.out.printf("%d %d %d\n",a[i],a[j],a[k]);
+
+                    }
+                    
                 }
             }
         }
-
     }
 }

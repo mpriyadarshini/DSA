@@ -14,19 +14,48 @@ public class Seven {
         for (int i = 0; i < n2; i++) {
             array2[i] = s.nextInt();
         }
-        intersection(array1, array2, n1, n2);
+        intersectionWithDuplicates(array1, array2);
+        intersectionWithoutDuplicates(array1, array2);
     }
 
-    public static void intersection(int a[],int b[], int l1, int l2) {
-        int i = 0, j = 0;
-        while (i < l1 && j < l2) {
-            if (a[i] < b[j])
+    public static void intersectionWithoutDuplicates(int a[], int b[]) {
+
+        int i = 0;
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+        
+        int j = 0;
+        while (i < a.length && j < b.length) {
+            if (a[i] == b[j]) {
+                System.out.println(a[i]);
                 i++;
-            else if (b[j] < a[i])
                 j++;
-            else {
-                System.out.print(b[j] + " ");
+            } else if (a[i] < b[j]) {
                 i++;
+            } else {
+                j++;
+            }
+        }
+
+    }
+
+    public static void intersectionWithDuplicates(int a[], int b[]) {
+
+        int i = 0;
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+       
+        int j = 0;
+        while (i < a.length && j < b.length) {
+            if (a[i] == b[j]) {
+                System.out.println(a[i] + " " + b[j]);
+                i++;
+                j++;
+            } else if (a[i] < b[j]) {
+                i++;
+            } else {
                 j++;
             }
         }
